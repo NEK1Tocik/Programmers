@@ -1,1 +1,1 @@
-print("My name is Nikita")
+print("My name is Nikita") #вывод в консоль
