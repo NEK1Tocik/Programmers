@@ -1,2 +1,2 @@
-user_name = input("Введите своё имя: ")
-print(f"Hello, {user_name} how are you doing today?")
+user_name = input("Введите своё имя: ") #пользовательский ввод
+print(f"Hello, {user_name} how are you doing today?") #вывод в консоль
