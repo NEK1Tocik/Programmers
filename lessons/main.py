@@ -1,2 +1,4 @@
-user_name = input("Введите своё имя: ") #пользовательский ввод
-print(f"Hello, {user_name} how are you doing today?")
+def greet(name):
+    return f"Hello, {name} how are you doing today?" #возвращаем строку
+
+print(greet("Nikita"))
