@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Authorization</title>
+    <style>
+        body {
+            background-color: cornflowerblue;
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            margin-top: 200px;
+        }
+
+        .div_h3 {
+            width: 300px;
+            height: 80px;
+            background-color: springgreen;
+            border-radius: 40px;
+            border: aqua 3px solid;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .input_main {
+            width: 300px;
+            height: 200px;
+            background-color: royalblue;
+            border-radius: 30px;
+            padding: 8px 0 0 0;
+        }
+
+        .input {
+            border-radius: 7px;
+            border: black 2px solid;
+        }
+
+        .button {
+            width: 250px;
+            height: 40px;
+            background-color: blue;
+            border-radius: 10px;
+            border: black 2px solid;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<form>
+    <div class="div_h3">
+        <h2>Пройдите авторизацию:</h2>
+    </div>
+    <div>
+        <div class="input_main"><br>
+            <p id="p">Hello world</p>
+            <p>Логин:<input id="inp_login" class="input"></p>
+            <p>Пароль:<input id="inp_pass" class="input"></p>
+            <button id="btn1" class="button">Войти</button>
+        </div>
+    </div>
+</form>
+<script>
+    let ko = false //переменная bool и одинарный комментарий
+    let func = (a, b) => { //стрелочная функция
+        console.log(a) //вывод в консоль
+        return 'Ваш логин: '+a+'\nВаш пароль: '+b
+    }
+        btn1.onclick = (e) => {
+            e.preventDefault() //отменяет действие поумолчанию
+            let login = inp_login.value
+            let password = inp_pass.value
+            p.innerHTML = login+" "+password
+            alert(func(login, password))
+        }
+</script>
+</body>
+</html>
