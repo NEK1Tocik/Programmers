@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Random Color</title>
+    <style>
+        body {
+            background-color: grey;
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            margin-top: 200px;
+        }
+
+        .div_h3 {
+            width: 300px;
+            height: 80px;
+            background-color: limegreen;
+            border-radius: 40px;
+            border: aqua 3px solid;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .input_main {
+            width: 300px;
+            height: 250px;
+            background-color: cadetblue;
+            border-radius: 30px;
+            padding: 8px 0 0 0;
+        }
+
+        .input {
+            border-radius: 7px;
+            border: black 2px solid;
+        }
+
+        .button {
+            width: 250px;
+            height: 40px;
+            background-color: darkgreen;
+            border-radius: 10px;
+            border: black 2px solid;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<form>
+    <div class="div_h3">
+        <h2>Пройдите авторизацию:</h2>
+    </div>
+    <div>
+        <div class="input_main"><br>
+            <p id="p">Hello world</p>
+            <p>Логин:<input id="inp_login" class="input"></p>
+            <p>Пароль:<input id="inp_pass" class="input"></p>
+            <button id="btn1" class="button">Начать</button>
+            <button id="btn2" class="button">Стоп</button>
+        </div>
+    </div>
+</form>
+<script>
+    let random = (min, max) => Math.round( max - Math.random() * (max-min))
+
+    let interval
+        btn1.onclick = (e) => {
+            e.preventDefault() //отменяет действие поумолчанию
+             interval = setInterval(() => { //устанавливаем интервал,
+                // который будет выполнять анонимную функцию циклично с указанной задержкой
+        document.body.style.background = `rgb(${random(0, 255)}, ${random(0, 255)}, ${random(0, 255)}`
+    }, 150) //функция, которая меняет цвет body на случайный каждые 150 мс
+        }
+      btn2.onclick = (e) => {
+           e.preventDefault()
+           clearInterval(interval) //очищаем созданный интервал
+            }
+</script>
+</body>
+</html>
