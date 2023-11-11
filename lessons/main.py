@@ -1,6 +1,8 @@
 import sqlite3
 
+# Устанавливаем соединение с базой данных (файл базы данных будет создан, если его нет)
 conn = sqlite3.connect('MyDB.db')
+# Создаем курсор для взаимодействия с базой данных
 cursor = conn.cursor()
 # Создаем таблицу
 cursor.execute('''CREATE TABLE IF NOT EXISTS table_1 (id INTEGER PRIMARY KEY, name TEXT, age INTEGER)''')
