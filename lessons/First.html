@@ -1,38 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Установка случайного цвета текста</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    p {
-      color: black; /* Начальный цвет текста элементов (можно поставить любой начальный цвет)*/
+    body {
+      margin: 0;
+      height: 100vh;
+      transition: background-color 0.3s ease;
     }
   </style>
+  <title>Случайный цвет фона</title>
+  <script>
+    setInterval(function() {
+      const randomColor = "#" + Math.floor(Math.random()*16777215).toString(16); // генерируем случайный цвет в формате HEX
+      document.body.style.backgroundColor = randomColor; // устанавливаем случайный цвет фона
+    }, 300); // изменяем цвет фона каждые 300 миллисекунд
+  </script>
 </head>
 <body>
-  <p class="item">Элемент 1</p>
-  <p class="item">Элемент 2</p>
-  <p class="item">Элемент 3</p>
-  <p class="item">Элемент 4</p>
-
-  <script>
-    function randomizeTextColor(array) {
-      array.forEach(function(element) {
-        // Генерируем случайные значения RGB
-        var red = Math.floor(Math.random() * 256);
-        var green = Math.floor(Math.random() * 256);
-        var blue = Math.floor(Math.random() * 256);
-
-        // Преобразуем значения RGB в формат шестнадцатеричного цвета
-        var color = '#' + red.toString(16).padStart(2, '0') + green.toString(16).padStart(2, '0') + blue.toString(16).padStart(2, '0');
-
-        // Применяем цвет текста к элементу
-        element.style.color = color;
-      });
-    }
-
-    var items = document.querySelectorAll('.item'); // Получаем все элементы с классом "item"
-    randomizeTextColor(items); // Вызываем функцию с массивом элементов
-  </script>
 </body>
 </html>
